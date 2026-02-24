@@ -1,4 +1,5 @@
 import './global.css';
+import { useState, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Text, View } from 'react-native';
 import { LoadingScreen } from '@/components/ui';
@@ -6,8 +7,14 @@ import { useAppFonts, FontFamily } from '@/hooks/useAppFonts';
 
 export default function App() {
   const fontsLoaded = useAppFonts();
+  const [splashDone, setSplashDone] = useState(false);
 
-  if (!fontsLoaded) {
+  useEffect(() => {
+    const timer = setTimeout(() => setSplashDone(true), 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!fontsLoaded || !splashDone) {
     return <LoadingScreen />;
   }
 
