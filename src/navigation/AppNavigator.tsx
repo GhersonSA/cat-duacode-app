@@ -27,7 +27,10 @@ export const AppNavigator = () => {
         />
         <Tab.Navigator
           initialRouteName="Cats"
-          screenOptions={{ headerShown: false }}
+          screenOptions={{
+            headerShown: false,
+            sceneStyle: { backgroundColor: 'transparent' },
+          }}
           tabBar={(props) => <TabBar {...props} />}
         >
           <Tab.Screen name="Favorites" component={FavoritesScreen} />

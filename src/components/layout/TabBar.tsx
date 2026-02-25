@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { COLORS } from '@/utils/constants';
 
 const TABS = [
-  { name: 'Favorites', icon: 'heart', iconOutline: 'heart-outline', color: '#EF4444' },
+  { name: 'Favorites', icon: 'heart', iconOutline: 'heart-outline', color: COLORS.brand.DEFAULT },
   { name: 'Cats', icon: 'paw', iconOutline: 'paw-outline', color: COLORS.brand.DEFAULT },
   { name: 'About', icon: 'person-circle', iconOutline: 'person-circle-outline', color: COLORS.brand.DEFAULT },
 ] as const;
