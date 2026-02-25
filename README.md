@@ -6,6 +6,25 @@ Explora razas de gatos, visualiza sus imágenes en scroll vertical estilo TikTok
 
 ---
 
+<p align="center">
+  <img src="./assets/readme.webp" alt="DuaCat Preview" width="100%" />
+</p>
+
+<p align="center">
+  <a href="https://www.figma.com/design/XOWEVQpzN5RizwhO2XxCRM/Untitled?node-id=0-1&t=wq14X9s8zuWEAET9-1">🎨 Ver prototipo en Figma</a>
+</p>
+
+---
+
+## 🧠 Decisiones Técnicas
+
+Durante el desarrollo (limitado al plazo de la prueba), se tomaron las siguientes decisiones arquitectónicas:
+
+- **TanStack React Query:** Elegido frente a `useEffect` tradicionales para manejar eficientemente la caché de las imágenes, los estados de carga (loading/error) y simplificar enormemente la lógica del scroll infinito (`useInfiniteQuery`).
+- **Zustand:** Se optó por Zustand sobre Redux o Context API por su minimalismo y nulo boilerplate, ideal para manejar el estado global de los votos (Likes/Dislikes) de forma rápida y sin penalizar el rendimiento.
+- **NativeWind:** Permite mantener la consistencia del diseño (Design System) de Figma en el código usando clases utilitarias, acelerando el desarrollo UI sin sacrificar el rendimiento nativo.
+- **Arquitectura Modular (Barrel Exports):** Se implementó una estructura basada en `index.ts` en las carpetas principales para mantener importaciones limpias y evitar el "infierno de rutas relativas".
+
 ## 📸 Características
 
 - **Exploración de razas** — Scroll horizontal con snap, búsqueda por nombre/país y ordenación por esperanza de vida
@@ -14,7 +33,16 @@ Explora razas de gatos, visualiza sus imágenes en scroll vertical estilo TikTok
 - **Favoritos** — Grid de imágenes favoritas con acceso directo al detalle
 - **About** — Perfil del desarrollador, tecnologías y enlaces sociales
 
-## 🛠️ Stack Tecnológico
+## � Futuras Mejoras (Próximos pasos)
+
+Si el proyecto continuara su desarrollo para un entorno de producción real, estas serían las prioridades:
+
+1. **Testing Automático:** Implementar pruebas unitarias y de componentes usando `Jest` y `React Native Testing Library`.
+2. **Persistencia Offline:** Usar `AsyncStorage` o `MMKV` para guardar los gatos favoritos localmente y permitir acceso sin conexión.
+3. **Animaciones Avanzadas:** Migrar algunas transiciones a `React Native Reanimated` para asegurar 60fps en dispositivos de gama baja.
+4. **CI/CD:** Configurar flujos de GitHub Actions o EAS (Expo Application Services) para automatizar los builds y testeos antes de cada despliegue.
+
+## �🛠️ Stack Tecnológico
 
 | Tecnología | Uso |
 |---|---|
