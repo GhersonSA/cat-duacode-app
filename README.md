@@ -1,0 +1,108 @@
+# 🐱 DuaCat — Prueba técnica React Native
+
+Aplicación móvil desarrollada como prueba técnica para **Duacode / Lãberit**, construida con **React Native + Expo**.
+
+Explora razas de gatos, visualiza sus imágenes en scroll vertical estilo TikTok, vota tus favoritas y gestiona tu colección personal.
+
+---
+
+## 📸 Características
+
+- **Exploración de razas** — Scroll horizontal con snap, búsqueda por nombre/país y ordenación por esperanza de vida
+- **Detalle de raza** — Scroll vertical infinito de imágenes con paginación
+- **Sistema de votos** — Like/dislike con animaciones spring, sincronizado con TheCatAPI
+- **Favoritos** — Grid de imágenes favoritas con acceso directo al detalle
+- **About** — Perfil del desarrollador, tecnologías y enlaces sociales
+
+## 🛠️ Stack Tecnológico
+
+| Tecnología | Uso |
+|---|---|
+| **Expo SDK 54** | Plataforma base |
+| **React Native 0.81** | Framework UI |
+| **TypeScript** | Tipado estático |
+| **NativeWind v4** | Estilos con Tailwind CSS |
+| **TanStack React Query** | Fetching y caché de datos |
+| **Zustand** | Estado global (votos) |
+| **Axios** | Cliente HTTP |
+| **React Navigation** | Navegación por tabs |
+| **Poppins** | Tipografía personalizada |
+
+## 📁 Estructura del Proyecto
+
+```
+src/
+├── api/              # Cliente HTTP y endpoints (breeds, images, votes)
+├── components/
+│   ├── layout/       # Header, TabBar
+│   └── ui/           # LoadingScreen, SearchBar, Skeleton
+├── hooks/            # useBreeds, useBreedImages, useAppFonts
+├── navigation/       # AppNavigator (Bottom Tabs)
+├── screens/          # CatsScreen, BreedDetailScreen, FavoritesScreen, AboutScreen
+├── store/            # votesStore (Zustand)
+├── types/            # Interfaces TypeScript
+└── utils/            # Constantes y configuración
+```
+
+## 🚀 Instalación y Ejecución
+
+### Requisitos previos
+
+- Node.js 18+
+- npm o yarn
+- Expo Go en tu dispositivo móvil (o un emulador)
+
+### Pasos
+
+1. **Clonar el repositorio**
+   ```bash
+   git clone https://github.com/GhersonSA/cat-duacode-app.git
+   cd cat-duacode-app
+   ```
+
+2. **Instalar dependencias**
+   ```bash
+   npm install
+   ```
+
+3. **Configurar variables de entorno**
+   ```bash
+   cp .env.example .env
+   ```
+   Edita `.env` y añade tu API key de [TheCatAPI](https://thecatapi.com/):
+   ```
+   CAT_API_KEY=tu_api_key_aqui
+   ```
+
+4. **Ejecutar la aplicación**
+   ```bash
+   npx expo start --clear
+   ```
+   Escanea el QR con Expo Go o presiona `a` para Android / `i` para iOS.
+
+## 🎨 Paleta de Colores
+
+| Color | Hex | Uso |
+|---|---|---|
+| Brand | `#8B5CF6` | Color principal |
+| Brand Light | `#EDE9FE` | Fondos suaves, chips |
+| Brand Dark | `#5B21B6` | Acentos oscuros |
+| Surface | `#F8FAFC` | Fondo de pantallas |
+| Text Main | `#0F172A` | Texto principal |
+| Text Muted | `#64748B` | Texto secundario |
+
+## 📄 API
+
+Datos e imágenes proporcionados por [TheCatAPI](https://thecatapi.com/).
+
+## 👤 Autor
+
+**Gherson Sánchez** — FullStack Developer
+
+- [LinkedIn](https://www.linkedin.com/in/gherson-sa/)
+- [GitHub](https://github.com/GhersonSA)
+- [Portfolio](https://ghersonsa.com/)
+
+## 📝 Licencia
+
+Este proyecto está bajo la licencia MIT. Ver [LICENSE](LICENSE) para más detalles.

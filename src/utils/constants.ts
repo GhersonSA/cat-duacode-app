@@ -1,3 +1,5 @@
+import Constants from 'expo-constants';
+
 export const APP_CONFIG = {
   name: 'Cat Lovers App',
   version: '1.0.0',
@@ -6,7 +8,7 @@ export const APP_CONFIG = {
 
 export const API_CONFIG = {
   baseURL: 'https://api.thecatapi.com/v1',
-  apiKey: 'REPLACE_WITH_YOUR_API_KEY',
+  apiKey: (Constants.expoConfig?.extra?.catApiKey as string) ?? '',
 } as const;
 
 export const COLORS = {
